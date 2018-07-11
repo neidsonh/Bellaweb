@@ -1,0 +1,154 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Index.master.cs" Inherits="MastersPages_Index" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" id="headMaster">
+    <meta charset="utf-8" />
+    <title>Bellaweb |</title>
+    <link href="~/assets/libs/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/libs/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/pnotify.custom.css" rel="stylesheet" media="all" type="text/css" />
+    <link rel="shortcut icon" href="../assets/img/IconeLogo.png" type="image/x-icon" />
+    <link href='https://fonts.googleapis.com/css?family=Maven+Pro:500' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'/>
+    <asp:ContentPlaceHolder ID="styles" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" name="form1" runat="server">
+        <header class="full-screen" id="topo">
+            <nav class="navbar navbar-default navbar-fixed-top affix" data-offset-top="197">
+                <div class="full-screen footer-teste">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapse" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="/">
+                                <img alt="Brand" src="../assets/img/IconeLogo.png" class="img-responsive" style="width: 25px" title="Página Inicial" />
+                            </a>
+                        </div>
+
+                        <bellaweb:menuTipoServicos ID="menu" runat="server"></bellaweb:menuTipoServicos>
+
+                        <ul class="nav navbar-nav navbar-right" id="ulSettingsEst" runat="server">
+                            <%--<li><a href="#">Link</a></li>--%>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <asp:Label ID="lblUsuarioLogado" runat="server" Text="" CssClass="usuario-logado"></asp:Label>
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/estabelecimento/<%= Codigo %>"><span class="glyphicon glyphicon-user glyphicon-purple-bellaweb"></span>&nbsp Meu Perfil</a></li>
+                                    <li><a href="/editar/meusservicos"><span class="glyphicon glyphicon-scissors glyphicon-purple-bellaweb"></span>&nbsp Serviços</a></li>
+                                    <li><a href="/editar/perfil"><span class="glyphicon glyphicon-cog glyphicon-purple-bellaweb"></span>&nbsp Configurações</a></li>
+
+                                    <%--<li><a href="#">Configurações</a></li>--%>
+                                    <%--<li><a href="#">Informações da Conta</a></li>--%>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <asp:LinkButton ID="btnLogout" CssClass="btn btn-default btn-group-justified btnLogout" runat="server" OnClick="btnLogout_Click"><span class="glyphicon glyphicon-off glyphicon-purple-bellaweb"></span>&nbsp Sair</asp:LinkButton></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right" id="ulSettingsAdm" runat="server">
+                            <%--<li><a href="#">Link</a></li>--%>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" id="ddl-login" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <asp:Label ID="lblUsuarioLogadoAdm" runat="server" Text="" CssClass="usuario-logado"></asp:Label>
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/admin"><span class="glyphicon glyphicon-tasks glyphicon-purple-bellaweb"></span>&nbsp Painel Administrativo</a></li>
+                                    <%--<li><a href="#">Configurações</a></li>--%>
+                                    <%--<li><a href="#">Informações da Conta</a></li>--%>
+                                    <li role="separator" class="divider"></li>
+                                    <li>
+                                        <asp:LinkButton ID="btnLogouAdm" CssClass="btn btn-default btn-group-justified btnLogout" runat="server" OnClick="btnLogout_Click"><span class="glyphicon glyphicon-off glyphicon-purple-bellaweb"></span>&nbsp Sair</asp:LinkButton></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <article>
+            <div class="class-paddingTop17px full-screen">
+                <asp:ContentPlaceHolder ID="contentBody" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </article>
+
+        <div class="full-screen ft-style footer-teste">
+            <footer class="container a-footer">
+                <div class="row">
+                    <div class="ft-block-border col-sm-3">
+                        <div class="ft-div">
+                            <strong class="ft-titulo">BellaWeb</strong>
+                            <ul class="ft-list">
+                                <li><a class="ft-list-item" title="Quem somos?" href="/quem-somos">Quem somos?</a></li>
+                                <li><a class="ft-list-item" title="Termos de uso" href="/termos-de-uso">Termos de uso</a></li>
+                                <li><a class="ft-list-item" title="Política de privacidade" href="/politica-de-privacidade">Política de privacidade</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ft-block-border col-sm-3">
+                        <div class="ft-div">
+                            <strong class="ft-titulo">Dúvidas</strong>
+                            <ul class="ft-list">
+                                <li><a class="ft-list-item" title="Perguntas frequentes" href="/perguntas-frequentes">Perguntas frequentes</a></li>
+                                <li><a class="ft-list-item" title="Fale conosco" href="/fale-conosco">Fale conosco</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="ft-block-border col-sm-3">
+                        <div class="ft-div">
+                            <strong class="ft-titulo">Siga-nos</strong>
+                            <ul class="ft-list">
+                                <li class="ft-list-inline"><a class="ft-list-item" title="Facebook" href="#">
+                                    <img src="../assets/img/Facebook.png" class="img-responsive" width="40" /></a></li>
+                                <li class="ft-list-inline"><a class="ft-list-item" title="Google+" href="#">
+                                    <img src="../assets/img/GoogleMais.png" class="img-responsive" width="40" /></a></li>
+                                <li class="ft-list-inline"><a class="ft-list-item" title="Instagran" href="#">
+                                    <img src="../assets/img/Instagram.png" class="img-responsive" width="40" /></a></li>
+                                <li class="ft-list-inline"><a class="ft-list-item" title="Linkedin" href="#">
+                                    <img src="../assets/img/Linkedin.png" class="img-responsive" width="40" /></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ft-block3 col-sm-3" id="divAcesso" visible="false" runat="server">
+                        <div class="ft-div">
+                            <strong class="ft-titulo">Acesso</strong>
+                            <ul class="ft-list">
+                                <li><a class="ft-list-item" title="Entrar" href="/login">Entrar</a></li>
+                                <li><a class="ft-list-item" title="Esqueci minha senha" href="#">Esqueci minha senha</a></li>
+                                <li><a class="ft-list-item" title="Cadastre-se" href="/cadastro">Cadastre-se</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+        </div>
+
+    </form>
+    <script src="<%=ResolveUrl("~/assets/libs/jquery/jquery.js") %>"></script>
+    <script src="<%=ResolveUrl("~/assets/libs/bootstrap/js/bootstrap.js") %>"></script>
+    <script src="<%=ResolveUrl("~/assets/js/Scripts/jquery.validate.js") %>"></script>
+    <script src="<%=ResolveUrl("~/assets/libs/jquery-mask/jquery-mask.js") %>"></script>
+    <script src="<%=ResolveUrl("~/assets/js/pnotify.custom.js") %>"></script>
+    <script src="<%=ResolveUrl("~/assets/js/Tooltip.js") %>"></script>
+    <script src="<%=ResolveUrl("~/assets/js/EditarFoto.js") %>"></script>
+    <script src="<%=ResolveUrl("~/assets/js/EditarFotoCapa.js") %>"></script>
+    <script src="<%=ResolveUrl("~/assets/js/Checkbox.js") %>"></script>
+    <asp:ContentPlaceHolder ID="beforeEndBody" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>
+

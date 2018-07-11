@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="About.master.cs" Inherits="MastersPages_About" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" id="headMaster">
+    <meta charset="utf-8" />
+    <title>Bellaweb | Sobre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/assets/libs/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/libs/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../assets/img/IconeLogo.png" type="image/x-icon" />
+    <asp:ContentPlaceHolder ID="styles" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top affix" data-offset-top="197">
+                <div class="full-screen">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4">
+                                <a href="/" class="left">
+                                    <img src="../assets/img/LogoPrincipal.png" class="img-responsive img-bellaweb" /></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%--<div class="full-screen">--%>
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-header">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="nav-header">
+                            <ul class="nav navbar-nav">
+
+                                <%--Home--%>
+                                <li class="link">
+                                    <a href="/" class="" role="listitem">Home</a>
+                                </li>
+
+                                <%--Quem Somos--%>
+                                <li class="link">
+                                    <a href="/quem-somos" class="" role="listitem">Quem Somos</a>
+                                </li>
+
+                                <%--Termos de Uso--%>
+                                <li class="link">
+                                    <a href="/termos-de-uso" class="" role="listitem">Termos de Uso</a>
+                                </li>
+
+                                <%--Perguntas Frequentes--%>
+                                <li class="link">
+                                    <a href="/perguntas-frequentes" class="" role="listitem">Perguntas Frequentes</a>
+                                </li>
+
+                                <%--Politica de Privacidade--%>
+                                <li class="link">
+                                    <a href="/politica-de-privacidade" class="" role="listitem">Política de Privacidade</a>
+                                </li>
+
+                                <%--Fale Conosco--%>
+                                <li class="link">
+                                    <a href="/fale-conosco" class="" role="listitem">Fale Conosco</a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <%--</div>--%>
+                </div>
+            </nav>
+        </header>
+
+
+        <article>
+            <div class="class-paddingTop17px-about full-screen">
+                <div class="container">
+                    <div class="row">
+                        <asp:ContentPlaceHolder ID="contentBody" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <hr />
+        <footer class=" full-screen a-footer footer-teste">
+            <div class="container">
+                <p class="text-right"><strong>BellaWeb Beleza Digital Ltda - 2016</strong> &copy - Todos os Direitos Reservados.</p>
+            </div>
+        </footer>
+    </form>
+    <script src="<%=ResolveUrl("~/assets/libs/jquery/jquery.js") %>"></script>
+    <script src="<%=ResolveUrl("~/assets/libs/bootstrap/js/bootstrap.js") %>"></script>
+    <script src="<%=ResolveUrl("~/assets/js/script.js") %>"></script>
+    <%--<script src="../assets/js/Scripts/jquery.maskedinput.js"></script>--%>
+    <script src="../assets/libs/jquery-mask/jquery-mask.js"></script>
+    <script src="../assets/js/Tooltip.js"></script>
+    <asp:ContentPlaceHolder ID="beforeEndBody" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>
