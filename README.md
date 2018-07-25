@@ -4,7 +4,7 @@ Projeto interdisciplinar baseado em uma aplicação onde o estabelecimento de es
 
 # Autores
 
-Douglas Santos
-Jonatas Leon
-Lucimar Colombo
-Neidson Henrique
+Douglas Santos,
+Jonatas Leon,
+Lucimar Colombo,
+Neidson Henrique.
